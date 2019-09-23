@@ -54,7 +54,7 @@ public class randomNumInt {
 	{
 		do
 		{
-			randomNum = randomNum / 2;
+			randomNum = randomNum / 10;
 			if (randomNum < min)
 				while (randomNum <= min)
 					randomNum += 10;
@@ -65,7 +65,7 @@ public class randomNumInt {
 	{
 		do
 		{
-			randomNum = randomNum / 2;
+			randomNum = randomNum / 10;
 			if (randomNum < min)
 				while (randomNum <= min)
 					randomNum += 10;
@@ -79,20 +79,14 @@ public class randomNumInt {
 	//Main function begins here
 	public static void main(String[] args)
 	{
-		int randomNum = (timeFactor() - reverseTimeFactor() * dateFactor()) ;
-		for (int i = 0; i < 5; i++)
-		{
-			if (randomNum < 0)
-				randomNum -= (timeFactor() - reverseTimeFactor() * dateFactor()) ;
-			else
-				randomNum += (timeFactor() - reverseTimeFactor() * dateFactor()) ;
-		}
+		int randomNum = (timeFactor() - reverseTimeFactor() * dateFactor());
+		
 		System.out.println("Enter the minimum number");
 		int min = inputMin() - 1;
 		System.out.println("Enter the maximum number");
 		int max = inputMax();
 		
-		if(min > 0 && randomNum < 0)
+		if(min >= 0 && randomNum < 0)
 			randomNum = randomNum * (-1);
 		
 		if (min+1 == max)
