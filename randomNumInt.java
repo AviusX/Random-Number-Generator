@@ -54,7 +54,7 @@ public class randomNumInt {
 	{
 		do
 		{
-			randomNum = randomNum / 10;
+			randomNum = randomNum / 2;
 			if (randomNum < min)
 				while (randomNum <= min)
 					randomNum += 10;
@@ -65,7 +65,7 @@ public class randomNumInt {
 	{
 		do
 		{
-			randomNum = randomNum / 10;
+			randomNum = randomNum / 2;
 			if (randomNum < min)
 				while (randomNum <= min)
 					randomNum += 10;
