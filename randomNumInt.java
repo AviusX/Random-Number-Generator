@@ -101,7 +101,13 @@ public class randomNumInt {
 			System.exit(0);
 		}
 		
-		if (max >= 10)
+		if (min > max)
+		{
+			System.out.println("Minimum number must not be greater than maximum number");
+			System.exit(0);
+		}
+		
+		if (max > 10)
 		{
 			randomNum = rangeDivideOverTen(randomNum, min, max);
 		}
