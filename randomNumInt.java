@@ -79,23 +79,24 @@ public class randomNumInt {
 	//Main function begins here
 	public static void main(String[] args)
 	{
-		int randomNum = (timeFactor() + reverseTimeFactor() + dateFactor())*(reverseTimeFactor()*timeFactor()/dateFactor());
+		int randomNum = (timeFactor() - reverseTimeFactor() * dateFactor()) ;
 		for (int i = 0; i < 5; i++)
 		{
 			if (randomNum < 0)
-				randomNum -= (timeFactor() + reverseTimeFactor() + dateFactor())*(reverseTimeFactor()*timeFactor()/dateFactor());
+				randomNum -= (timeFactor() - reverseTimeFactor() * dateFactor()) ;
 			else
-				randomNum += (timeFactor() + reverseTimeFactor() + dateFactor())*(reverseTimeFactor()*timeFactor()/dateFactor());
+				randomNum += (timeFactor() - reverseTimeFactor() * dateFactor()) ;
 		}
+		System.out.println(randomNum);
 		System.out.println("Enter the minimum number");
-		int min = inputMin();
+		int min = inputMin() - 1;
 		System.out.println("Enter the maximum number");
 		int max = inputMax();
 		
 		if(min > 0 && randomNum < 0)
 			randomNum = randomNum * (-1);
 		
-		if (min == max)
+		if (min+1 == max)
 		{
 			System.out.println("Invalid Range.");
 			System.exit(0);
