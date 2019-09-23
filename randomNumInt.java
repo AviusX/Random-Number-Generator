@@ -87,7 +87,6 @@ public class randomNumInt {
 			else
 				randomNum += (timeFactor() - reverseTimeFactor() * dateFactor()) ;
 		}
-		System.out.println(randomNum);
 		System.out.println("Enter the minimum number");
 		int min = inputMin() - 1;
 		System.out.println("Enter the maximum number");
