@@ -1,7 +1,7 @@
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class randomNumInt {
+public class RandomNumTime {
 	
 	static int randomTime;
 	
@@ -54,7 +54,9 @@ public class randomNumInt {
 	{
 		do
 		{
-			randomNum = randomNum / 10;
+			int randomDigit = randomNum % 10;
+			randomNum += randomizer(randomNum, randomDigit);			
+			randomNum = randomNum / max;
 			if (randomNum < min)
 				while (randomNum <= min)
 					randomNum += 10;
@@ -65,7 +67,9 @@ public class randomNumInt {
 	{
 		do
 		{
-			randomNum = randomNum / 10;
+			int randomDigit = randomNum % 10;
+			randomNum += randomizer(randomNum, randomDigit);
+			randomNum = randomNum / 100;
 			if (randomNum < min)
 				while (randomNum <= min)
 					randomNum += 10;
@@ -74,6 +78,18 @@ public class randomNumInt {
 		while (randomNum > max)
 			randomNum = randomNum - (max - min);
 		return (randomNum);
+	}
+	
+	static int randomizer(int randomNum, int randomDigit)
+	{
+		int randomUpdate = randomDigit;
+		
+		while (randomNum > 1)
+		{
+			randomNum = randomNum / 10;
+			randomUpdate = randomUpdate * 10;
+		}
+		return randomUpdate;
 	}
 	
 	//Main function begins here
@@ -88,6 +104,7 @@ public class randomNumInt {
 		
 		if(min >= 0 && randomNum < 0)
 			randomNum = randomNum * (-1);
+		System.out.println(randomNum);
 		
 		if (min+1 == max)
 		{
@@ -110,6 +127,7 @@ public class randomNumInt {
 		{
 			randomNum = rangeDivideUnderTen(randomNum, min, max);
 		}
+		
 
 		System.out.println(randomNum);
 	}
