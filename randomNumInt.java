@@ -1,3 +1,5 @@
+//Note: Randomizer function has been created but hasn't been implemented anywhere yet. It is used in main function
+//	to give a test output. It has no impact on the generated number yet.
 import java.util.Calendar;
 import java.util.Scanner;
 
@@ -75,6 +77,28 @@ public class randomNumInt {
 			randomNum = randomNum - (max - min);
 		return (randomNum);
 	}
+	static int randomizer(int randomNum)
+	{
+		int lastDigit = randomNum % 10;
+		int tempRandomNum = randomNum;
+		if(lastDigit == 0)
+		{
+			return(lastDigit);
+		}
+		else
+		{
+			while(tempRandomNum / 10 != 0)
+			{
+				lastDigit *= 10;
+				tempRandomNum /= 10;
+			}
+		
+			System.out.println("tempRandomNum = " +tempRandomNum);
+			System.out.println("lastDigit = " +lastDigit);
+			System.out.println("randomNum = " +randomNum);
+			return(lastDigit);
+		}
+	}
 	
 	//Main function begins here
 	public static void main(String[] args)
@@ -85,6 +109,7 @@ public class randomNumInt {
 		int min = inputMin() - 1;
 		System.out.println("Enter the maximum number");
 		int max = inputMax();
+		randomizer(randomNum);
 		
 		if(min >= 0 && randomNum < 0)
 			randomNum = randomNum * (-1);
